@@ -70,17 +70,11 @@ class Dog
     DB[:conn].execute(sql, name).collect do |row|
       self.new_from_db(row)
     end.first
-      
   end
-    
-
-
   
   def self.drop_table
     sql = <<-SQL
-    
     DROP TABLE dogs
-    
     SQL
     
     DB[:conn].execute(sql)
@@ -109,7 +103,5 @@ class Dog
      
      DB[:conn].execute(sql, self.name, self.breed, self.id)
    end
-
-
 
 end
