@@ -55,6 +55,23 @@ class Dog
     #   dog = self.create(name: name, breed: breed)
     # end
     # dog
+    
+    sql = <<-SQL
+      SELECT * FROM dogs
+      WHERE name = ? AND breed = ?
+      SQL
+
+
+      dog = DB[:conn].execute(sql, name, breed).first
+
+      if dog
+        new_dog = self.new_from_db(dog)
+      else
+        new_dog = self.create({:name => name, :breed => breed})
+      end
+      new_dog
+  end
+    
   end
 
 
