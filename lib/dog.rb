@@ -20,10 +20,12 @@ class Dog
     DB[:conn].execute(sql)
   end
   
-  def create
-    
-  
-  end  
+  def self.create(name, album)
+   song = Song.new(name, album)
+   song.save
+   song
+ end
+
   
   def self.drop_table
     sql = <<-SQL
