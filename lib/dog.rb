@@ -43,11 +43,14 @@ class Dog
      @id = DB[:conn].execute("SELECT last_insert_rowid() FROM dogs")[0][0]
      
      return self
-   end
-end
+    end
+  end
 
   def update
-     sql = "UPDATE dogs SET name = ?, breed = ? WHERE id = ?"
+     sql = <<-SQL 
+     UPDATE dogs SET name = ?, breed = ? WHERE id = ?
+     SQL
+     
      DB[:conn].execute(sql, self.name, self.breed, self.id)
    end
 
