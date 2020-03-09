@@ -69,7 +69,7 @@ class Dog
     
     DB[:conn].execute(sql, name) do |row|
       self.new_from_db
-      
+    end.first
       
   end
     
