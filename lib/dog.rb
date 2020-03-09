@@ -72,7 +72,6 @@ class Dog
       new_dog
   end
     
-  end
 
 
   
