@@ -21,7 +21,7 @@ class Dog
   end
   
   def self.create(name, breed)
-   dog = Song.new(name, breed)
+   dog = Dog.new(name, breed)
    dog.save
    dog
  end
