@@ -20,6 +20,11 @@ class Dog
     DB[:conn].execute(sql)
   end
   
+  def create
+    
+  
+  end  
+  
   def self.drop_table
     sql = <<-SQL
     
