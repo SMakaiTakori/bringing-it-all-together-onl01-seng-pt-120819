@@ -34,6 +34,8 @@ class Dog
     }
     self.new(attributes_hash)
   end
+  
+  
 
   
   def self.drop_table
